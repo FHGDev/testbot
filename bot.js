@@ -4,11 +4,16 @@ const Enmap = require('enmap')
 const EnmapLevel = require('enmap-level')
 bot.login(process.env.token);
 
+const serverprovider = new EnmapLevel({name: 'servers'});
+this.servers = new Enmap({provider: servers})
+
+bot.serverMonitor()
+
 
 
 bot.on("ready" () => require('./events/ready.js')(bot))
 bot.on(`error`, (error) => console.log(error));
-bot.on(`disconnect`, () => console.log(`Client connection attempts: FAILD`));
+bot.on(`disconnect`, () => console.log(`Client connection attempts: FAILED`));
 bot.on(`message`, (msg) => require("./events/message.js")(bot, msg, bot.commands));
 bot.on(`message`, (msg) => require("./musicbot/musicHandle.js")(bot, msg));
 bot.on(`guildMemberAdd`, (member) => require("./events/guildMemberAdd.js")(bot, member));

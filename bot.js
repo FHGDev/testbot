@@ -1,20 +1,8 @@
 const discord = require('discord.js');
 const bot = new discord.Client();
+const Enmap = require('enmap')
+const EnmapLevel = require('enmap-level')
 bot.login(process.env.token);
-const sql = require("sqlite")
-sql.open("./score.sqlite")
-
-sql.get(`SELECT * FROM scores WHERE userId = "${message.author.id}" `).then(row => {
-  
-}).catch(() => {
-  console.error; // Gotta log those errors
-  sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
-    sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
-    if (!row) {
-      sql.run()
-    }
-  })
-})
 
 
 

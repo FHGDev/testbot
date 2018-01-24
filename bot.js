@@ -18,7 +18,7 @@ bot.on("ready", () => {
 	bot.user.setGame(`t!help | ${bot.guilds.array().length} servers`)
 	console.log(`${bot.user.username} v${pak.version} is ready!`)
 	bot.guilds.forEach((guild, id => {
-		console.log(`[SERVER] [${guild.memberCount}] ${guild.name} ($guild.id}) | Joined: ${guild.joinedAt.toString()}
+		console.log(`[SERVER] [${guild.memberCount}] ${guild.name} ($guild.id}) | Joined: ${guild.joinedAt.toString()}`)
 	})
 });
 
